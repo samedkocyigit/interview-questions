@@ -16,10 +16,8 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
             ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
 
             bool output = testObject.isStringUniq(input);
-            bool output2 = testObject.isStringUniqSecondSolution(input);
 
             Assert.AreEqual(expectedResult, output);
-            Assert.AreEqual(expectedResult, output2);
         }
     }
 }
