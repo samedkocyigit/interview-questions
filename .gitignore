@@ -349,4 +349,3 @@ healthchecksdb
 .cov/*
 data-coverity/*
 UnitTest_Reports/*
-.vs/*
