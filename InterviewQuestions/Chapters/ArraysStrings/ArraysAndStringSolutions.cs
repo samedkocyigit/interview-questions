@@ -16,23 +16,6 @@
                     }
                 }
             }
-
-            return isUniq;
-        }
-
-        public bool isStringUniqSecondSolution(string input)
-        {
-            bool isUniq = true;
-            bool[] chars = new bool[128];
-            for (int i = 0; i < input.Length; i++)
-            {
-                var val = input.ElementAt(i);
-                if (chars[val])
-                {
-                    isUniq = false;
-                }
-                chars[val] = true;
-            }
             return isUniq;
         }
     }
