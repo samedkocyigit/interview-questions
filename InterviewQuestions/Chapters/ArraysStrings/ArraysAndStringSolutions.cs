@@ -57,7 +57,7 @@
                     break;
                 }
             }
-            if (newString.Length < input.Lengt)
+            if (newString.Length < input.Length)
                 return newString;
             else
                 return input;
