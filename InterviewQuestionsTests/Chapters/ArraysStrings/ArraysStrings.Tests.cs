@@ -18,8 +18,16 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
             bool output = testObject.isStringUniq(input);
             bool outputSecond = testObject.isStringUniqSecondSolution(input);
 
+            
             Assert.AreEqual(expectedResult, output);
-            Assert.AreEqual(expectedResult, outputSecond);
+            Assert.AreEqual(expectedResult, outputSecond);    
+        }
+        public void stringCompression(string input,string expectedResult)
+        {
+            StringCompressionSolution testObject1 = new StringCompressionSolution;
+
+            static string solution = testObject.stringCompression(input);
+
         }
     }
 }
