@@ -12,6 +12,7 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
         [DataRow("abcdef g", true)]
         [DataRow("abcdef b", false)]
         public void isStringUniqTest(string input, bool expectedResult)
+
         {
             ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
 
@@ -22,11 +23,11 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
             Assert.AreEqual(expectedResult, output);
             Assert.AreEqual(expectedResult, outputSecond);    
         }
-        public void stringCompression(string input,string expectedResult)
+        public void stringCompression(string input, string expectedResult)
         {
             ArraysAndStringSolutions testObject1 = new ArraysAndStringSolutions();
 
-            string stringSolution = testObject1.stringCompression(input);
+            string solution = testObject1.stringCompression(input);
         }
     }
 }
