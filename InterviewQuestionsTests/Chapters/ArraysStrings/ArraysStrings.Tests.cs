@@ -12,14 +12,22 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
         [DataRow("abcdef g", true)]
         [DataRow("abcdef b", false)]
         public void isStringUniqTest(string input, bool expectedResult)
+
         {
             ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
 
             bool output = testObject.isStringUniq(input);
             bool outputSecond = testObject.isStringUniqSecondSolution(input);
 
+            
             Assert.AreEqual(expectedResult, output);
-            Assert.AreEqual(expectedResult, outputSecond);
+            Assert.AreEqual(expectedResult, outputSecond);    
+        }
+        public void stringCompression(string input, string expectedResult)
+        {
+            ArraysAndStringSolutions testObject1 = new ArraysAndStringSolutions();
+
+            string solution = testObject1.stringCompression(input);
         }
     }
 }
