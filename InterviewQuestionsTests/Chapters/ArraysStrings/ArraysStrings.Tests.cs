@@ -26,7 +26,7 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
         {
             StringCompressionSolution testObject1 = new StringCompressionSolution();
 
-            static string solution = testObject1.stringCompression(input);
+            string solution = testObject1.stringCompression(input);
 
         }
     }
