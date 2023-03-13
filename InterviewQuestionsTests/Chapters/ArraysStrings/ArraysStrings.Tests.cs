@@ -24,10 +24,9 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
         }
         public void stringCompression(string input,string expectedResult)
         {
-            StringCompressionSolution testObject1 = new StringCompressionSolution;
+            ArraysAndStringSolutions testObject1 = new ArraysAndStringSolutions();
 
-            static string solution = testObject.stringCompression(input);
-
+            string stringSolution = testObject1.stringCompression(input);
         }
     }
 }
