@@ -28,6 +28,8 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
             ArraysAndStringSolutions testObject1 = new ArraysAndStringSolutions();
 
             string solution = testObject1.stringCompression(input);
+            
+            Assert.AreEqual(expectedResult, solution);
         }
     }
 }
