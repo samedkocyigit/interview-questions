@@ -23,6 +23,12 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
             Assert.AreEqual(expectedResult, output);
             Assert.AreEqual(expectedResult, outputSecond);    
         }
+        
+        [DataTestMethod]
+        [DataRow("aaabbcccccdd","a3b2c5d2")]
+        [DataRow("aabcde", "aabcde")]
+        [DataRow("aaaaabccdeee", "a5b1c2d1e3")]
+        [DataRow("abcdef","abcdef" )]
         public void stringCompression(string input, string expectedResult)
         {
             ArraysAndStringSolutions testObject1 = new ArraysAndStringSolutions();
