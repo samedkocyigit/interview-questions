@@ -37,30 +37,33 @@
         public string stringCompression(string input)
         {
             string newString = "";
-            int i = 0;
-            while(i< input.Length)
+            int counter = 1;
+            for(int i = 0; i < input.Length;)
             {
-                int counter = 1;
-                while (input[i] == input[i+1] && i<input.Length-1)
+                while ((i+counter) < input.Length && input[i] == input[i+counter])
                 {
                     counter++;
-                    i++;
-                    if (i == input.Length - 1) {break;} //a limiter for that the index does not exceed the limits of the array
-                }
-                newString += input[i];
-                newString += counter;
-                i++;
-                if (i == input.Length - 1)
-                {
-                    newString += input[i - 1];
-                    newString += counter;
-                    break;
+                }    
+                newString += input[i]+counter.ToString();
+                i += counter;
+                counter = 1;
+            }
+            return (newString.Length < input.Length) ? newString : input;
+        }
+        public string stringCompressionAlternate(string input) 
+        {
+            string compressedString = "";
+            int count = 0;
+            for(int i = 0; i < input.Length; i++)
+            {
+                count++;
+                if(i+1>=input.Length || input[i]!= input[i + 1])
+                {   
+                    compressedString += input[i]+count.ToString();
+                    count = 0;
                 }
             }
-            if (newString.Length < input.Length)
-                return newString;
-            else
-                return input;
+            return (input.Length<compressedString.Length) ? input : compressedString; 
         }
     }
 }
