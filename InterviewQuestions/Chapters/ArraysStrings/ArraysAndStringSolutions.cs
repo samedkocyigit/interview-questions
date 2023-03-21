@@ -34,5 +34,36 @@
             }
             return isUniq;
         }
+        public string stringCompression(string input)
+        {
+            string newString = "";
+            int counter = 1;
+            for(int i = 0; i < input.Length;)
+            {
+                while ((i+counter) < input.Length && input[i] == input[i+counter])
+                {
+                    counter++;
+                }    
+                newString += input[i]+counter.ToString();
+                i += counter;
+                counter = 1;
+            }
+            return (newString.Length < input.Length) ? newString : input;
+        }
+        public string stringCompressionAlternate(string input) 
+        {
+            string compressedString = "";
+            int count = 0;
+            for(int i = 0; i < input.Length; i++)
+            {
+                count++;
+                if(i+1>=input.Length || input[i]!= input[i + 1])
+                {   
+                    compressedString += input[i]+count.ToString();
+                    count = 0;
+                }
+            }
+            return (input.Length<compressedString.Length) ? input : compressedString; 
+        }
     }
 }
