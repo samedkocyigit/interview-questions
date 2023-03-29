@@ -39,5 +39,17 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
             Assert.AreEqual(expectedResult, solution);
             Assert.AreEqual(expectedResult,alternateSolution);
         }
+        [DataTestMethod]
+        [DataRow("abdulsamed", "demasludba",true)]
+        [DataRow("furkan", "furcan",false)]
+        [DataRow("ali", "lia",true)]
+        public void stringPermutation(string input,string testString,bool expectedResult)
+        {
+            ArraysAndStringSolutions testObjecet2 = new ArraysAndStringSolutions();
+
+            bool solution = testObjecet2.isStringPermutation(input,testString);
+
+            Assert.AreEqual(expectedResult,solution);
+        }
     }
 }

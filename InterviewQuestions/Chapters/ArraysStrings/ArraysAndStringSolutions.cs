@@ -1,4 +1,6 @@
-﻿namespace InterviewQuestions.Chapters.ArraysStrings
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace InterviewQuestions.Chapters.ArraysStrings
 {
     public class ArraysAndStringSolutions
     {
@@ -64,6 +66,27 @@
                 }
             }
             return (input.Length<compressedString.Length) ? input : compressedString; 
+        }
+        public bool isStringPermutation(string firstString,string secondString)
+        {
+            bool flag = false;
+            char []ch1 = firstString.ToCharArray();
+            char []ch2= secondString.ToCharArray();
+
+            Array.Sort(ch1);
+            Array.Sort(ch2);
+
+            if (firstString.Length != secondString.Length) 
+                return flag;
+            
+            for(int i=0;i<firstString.Length;i++)
+            {
+                if (ch1[i]!= ch2[i]) 
+                    return flag;
+            }
+            flag = true;
+            return flag;    
+
         }
     }
 }
