@@ -88,5 +88,45 @@ namespace InterviewQuestions.Chapters.ArraysStrings
             return flag;    
 
         }
+        public int[,] zeroesMatrix(int[,] matrix)
+        {
+            int row=matrix.GetLength(0);
+            int col=matrix.GetLength(1);
+            int[,] testMatrix= new int[row,col];
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    matrix[i, j] = testMatrix[i, j];
+                }
+            }
+            for (int i=0; i < row; i++)
+            {
+                for(int j=0; j<col; j++)
+                {
+                    if (matrix[i,j] == 0)
+                    {
+                        for(int k=0; k<row; k++)
+                        {
+                            testMatrix[i,k] = 0;
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j <col; j++)
+                {
+                    if (matrix[i,j] == 0)
+                    {
+                        for (int k = 0; k < col; k++)
+                        {
+                            testMatrix[k,j] = 0;
+                        }
+                    }
+                }
+            }
+            return testMatrix;
+        }
     }
 }
