@@ -57,7 +57,8 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
 
             int[,] solution = testObject.zeroesMatrix(input);
 
-            //Assert.AreEqual(expectedResult,solution);
+            Assert.AreEqual(0, solution[0, 1]);
+            Assert.AreEqual(0, solution[2, 0]);
         }
     }
 }

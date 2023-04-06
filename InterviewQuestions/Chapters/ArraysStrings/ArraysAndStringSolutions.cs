@@ -92,36 +92,24 @@ namespace InterviewQuestions.Chapters.ArraysStrings
         {
             int row=matrix.GetLength(0);
             int col=matrix.GetLength(1);
-            int[,] testMatrix= new int[row,col];
+            int[,] testMatrix= new int[row, col];
             for (int i = 0; i < row; i++)
             {
                 for (int j = 0; j < col; j++)
                 {
-                    matrix[i, j] = testMatrix[i, j];
+                    testMatrix[i, j] = matrix[i, j];
                 }
             }
             for (int i=0; i < row; i++)
             {
-                for(int j=0; j<col; j++)
+                for(int j=0; j < col; j++)
                 {
-                    if (matrix[i,j] == 0)
+                    if (matrix[i, j] == 0)
                     {
-                        for(int k=0; k<row; k++)
+                        for(int k=0; k < row; k++)
                         {
-                            testMatrix[i,k] = 0;
-                        }
-                    }
-                }
-            }
-            for (int i = 0; i < row; i++)
-            {
-                for (int j = 0; j <col; j++)
-                {
-                    if (matrix[i,j] == 0)
-                    {
-                        for (int k = 0; k < col; k++)
-                        {
-                            testMatrix[k,j] = 0;
+                            testMatrix[i, k] = 0;
+                            testMatrix[k, j] = 0;
                         }
                     }
                 }
