@@ -51,22 +51,30 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
 
             Assert.AreEqual(expectedResult, solution);
         }
-        [DataTestMethod]
+        [TestMethod]
         public void zeroMatrix()
         {
             ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
 
-            int[,] inputArray = new int[3, 4] { { 1, 1, 1, 1 },
-                                                { 2, 2, 2, 2 },
-                                                { 3, 3, 0, 3 }, };
+            //int[,] inputArray = new int[3, 4] { { 1, 1, 1, 1 },
+            //                                    { 2, 2, 2, 2 },
+            //                                    { 3, 3, 0, 3 }, };
+            
+            int[,] secArray = new int[3, 3] { {1,2,3 },
+                                              {1,0,1 },
+                                              {1,1,1} };
+            //int[,] solution = testObject.zeroesMatrix(inputArray);
+            int[,] solution2 = testObject.zeroesMatrix(secArray);
+            Assert.AreEqual(1, solution2[0, 0]);
+            Assert.AreEqual(0, solution2[0, 1]);
+            Assert.AreEqual(3, solution2[0, 2]);
+            Assert.AreEqual(0, solution2[1, 0]);
+            Assert.AreEqual(0, solution2[1, 1]);
+            Assert.AreEqual(0, solution2[1, 2]);
+            Assert.AreEqual(1, solution2[2, 0]);
+            Assert.AreEqual(0, solution2[2, 1]);
+            Assert.AreEqual(1, solution2[2, 2]);
 
-            int[,] solution = testObject.zeroesMatrix(inputArray);
-
-            Assert.AreEqual(0, solution[0, 2]);
-            Assert.AreEqual(0, solution[1, 2]);
-            Assert.AreEqual(0, solution[2, 0]);
-            Assert.AreEqual(0, solution[2, 1]);
-            Assert.AreEqual(0, solution[2, 2]);
         }
     }
 }
