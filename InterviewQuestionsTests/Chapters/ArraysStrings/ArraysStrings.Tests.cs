@@ -51,8 +51,9 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
 
             Assert.AreEqual(expectedResult, solution);
         }
+
         [TestMethod]
-        public void zeroMatrix()
+        public void zeroMatrixTest1()
         {
             ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
 
@@ -60,22 +61,7 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
                                                 { 2, 2, 2, 2 },
                                                 { 3, 3, 0, 3 }, };
 
-            int[,] secArray = new int[3, 3] { {1,2,3 },
-                                              {1,0,1 },
-                                              {1,1,1} };
-
             int[,] solution = testObject.zeroesMatrix(inputArray);
-            int[,] solution2 = testObject.zeroesMatrix(secArray);
-
-            Assert.AreEqual(1, solution2[0, 0]);
-            Assert.AreEqual(0, solution2[0, 1]);
-            Assert.AreEqual(3, solution2[0, 2]);
-            Assert.AreEqual(0, solution2[1, 0]);
-            Assert.AreEqual(0, solution2[1, 1]);
-            Assert.AreEqual(0, solution2[1, 2]);
-            Assert.AreEqual(1, solution2[2, 0]);
-            Assert.AreEqual(0, solution2[2, 1]);
-            Assert.AreEqual(1, solution2[2, 2]);
 
             Assert.AreEqual(1, solution[0, 0]);
             Assert.AreEqual(1, solution[0, 1]);
@@ -89,6 +75,29 @@ namespace InterviewQuestionsTests.Chapters.ArraysStrings
             Assert.AreEqual(0, solution[2, 1]);
             Assert.AreEqual(0, solution[2, 2]);
             Assert.AreEqual(0, solution[2, 3]);
+
+        }
+
+        [TestMethod]
+        public void zeroMatrixTest2()
+        {
+            ArraysAndStringSolutions testObject = new ArraysAndStringSolutions();
+
+            int[,] inputArray = new int[3, 3] {{ 1,2,3 },
+                                               { 1,0,1 },
+                                               { 1,1,1 } };
+
+            int[,] solution = testObject.zeroesMatrix(inputArray);
+
+            Assert.AreEqual(1, solution[0, 0]);
+            Assert.AreEqual(0, solution[0, 1]);
+            Assert.AreEqual(3, solution[0, 2]);
+            Assert.AreEqual(0, solution[1, 0]);
+            Assert.AreEqual(0, solution[1, 1]);
+            Assert.AreEqual(0, solution[1, 2]);
+            Assert.AreEqual(1, solution[2, 0]);
+            Assert.AreEqual(0, solution[2, 1]);
+            Assert.AreEqual(1, solution[2, 2]);
 
         }
     }
