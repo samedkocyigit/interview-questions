@@ -40,59 +40,59 @@ namespace InterviewQuestions.Chapters.ArraysStrings
         {
             string newString = "";
             int counter = 1;
-            for(int i = 0; i < input.Length;)
+            for (int i = 0; i < input.Length;)
             {
-                while ((i+counter) < input.Length && input[i] == input[i+counter])
+                while ((i + counter) < input.Length && input[i] == input[i + counter])
                 {
                     counter++;
-                }    
-                newString += input[i]+counter.ToString();
+                }
+                newString += input[i] + counter.ToString();
                 i += counter;
                 counter = 1;
             }
             return (newString.Length < input.Length) ? newString : input;
         }
-        public string stringCompressionAlternate(string input) 
+        public string stringCompressionAlternate(string input)
         {
             string compressedString = "";
             int count = 0;
-            for(int i = 0; i < input.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
                 count++;
-                if(i+1>=input.Length || input[i]!= input[i + 1])
-                {   
-                    compressedString += input[i]+count.ToString();
+                if (i + 1 >= input.Length || input[i] != input[i + 1])
+                {
+                    compressedString += input[i] + count.ToString();
                     count = 0;
                 }
             }
-            return (input.Length<compressedString.Length) ? input : compressedString; 
+            return (input.Length < compressedString.Length) ? input : compressedString;
         }
-        public bool isStringPermutation(string firstString,string secondString)
+        public bool isStringPermutation(string firstString, string secondString)
         {
             bool flag = false;
-            char []ch1 = firstString.ToCharArray();
-            char []ch2= secondString.ToCharArray();
+            char[] ch1 = firstString.ToCharArray();
+            char[] ch2 = secondString.ToCharArray();
 
             Array.Sort(ch1);
             Array.Sort(ch2);
 
-            if (firstString.Length != secondString.Length) 
+            if (firstString.Length != secondString.Length)
                 return flag;
-            
-            for(int i=0;i<firstString.Length;i++)
+
+            for (int i = 0; i < firstString.Length; i++)
             {
-                if (ch1[i]!= ch2[i]) 
+                if (ch1[i] != ch2[i])
                     return flag;
             }
             flag = true;
-            return flag;    
+            return flag;
 
         }
         public int[,] zeroesMatrix(int[,] matrix)
         {
-            int row=matrix.GetLength(0);
-            int col=matrix.GetLength(1);
-            List<int> setRow= new List<int>();
+            int row = matrix.GetLength(0);
+            int col = matrix.GetLength(1);
+            List<int> setRow = new List<int>();
             List<int> setColumn = new List<int>();
             for (int i = 0; i < row; i++)
             {
@@ -109,13 +109,13 @@ namespace InterviewQuestions.Chapters.ArraysStrings
             {
                 for (int j = 0; j < col; j++)
                 {
-                    if(setRow.Contains(i) || setColumn.Contains(j))
+                    if (setRow.Contains(i) || setColumn.Contains(j))
                     {
                         matrix[i, j] = 0;
                     }
                 }
             }
-            
+
             return matrix;
         }
     }
