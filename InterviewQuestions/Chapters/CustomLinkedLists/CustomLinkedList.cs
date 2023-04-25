@@ -1,4 +1,7 @@
-﻿namespace InterviewQuestions.Chapters.CustomLinkedLists
+﻿using System.Diagnostics;
+using System.Security;
+
+namespace InterviewQuestions.Chapters.CustomLinkedLists
 {
     public class CustomLinkedList
     {
@@ -34,6 +37,33 @@
                 }
                 currentNode.next = newNode;
             }
+        }
+        public int getKhtLastElement(int index)
+        {
+            Node? currentNode = head;
+            int lenght = 0;
+            while (currentNode != null) 
+            {
+                currentNode = currentNode.next;
+                lenght++;
+            }
+            if (lenght < index)
+            {
+                Debug.Assert(false);
+            }
+            currentNode = head;
+
+            for (int i = 1; i < lenght - index + 1; i++)
+                currentNode = currentNode?.next;
+
+            if (currentNode != null)
+            {
+                return currentNode.data;
+            }
+            else
+                Debug.Assert(false);
+            return 0;
+
         }
     }
 }
