@@ -38,21 +38,26 @@ namespace InterviewQuestions.Chapters.CustomLinkedLists
                 currentNode.next = newNode;
             }
         }
-        public int getKhtLastElement(int index)
+        public int getLenghtLinkedList()
         {
-            Node? currentNode = head;
+            Node? currentNode= head;
             int lenght = 0;
-            while (currentNode != null) 
+            while (currentNode != null)
             {
                 currentNode = currentNode.next;
                 lenght++;
             }
+            return lenght;
+        }
+        public int getKhtLastElement(int index)
+        {
+            Node? currentNode = head;
+            int lenght = getLenghtLinkedList();
+
             if (lenght < index)
             {
-                Debug.Assert(false);
+                throw new IndexOutOfRangeException("Index out of range.");
             }
-            currentNode = head;
-
             for (int i = 1; i < lenght - index + 1; i++)
                 currentNode = currentNode?.next;
 
@@ -61,8 +66,7 @@ namespace InterviewQuestions.Chapters.CustomLinkedLists
                 return currentNode.data;
             }
             else
-                Debug.Assert(false);
-            return 0;
+                throw new Exception("Error: current node is null.");
 
         }
     }
