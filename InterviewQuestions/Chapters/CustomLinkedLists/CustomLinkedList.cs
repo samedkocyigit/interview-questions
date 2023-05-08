@@ -38,7 +38,7 @@ namespace InterviewQuestions.Chapters.CustomLinkedLists
                 currentNode.next = newNode;
             }
         }
-        public int getLenghtLinkedList()
+        public int getLenght()
         {
             Node? currentNode= head;
             int lenght = 0;
@@ -52,7 +52,7 @@ namespace InterviewQuestions.Chapters.CustomLinkedLists
         public int getKhtLastElement(int index)
         {
             Node? currentNode = head;
-            int lenght = getLenghtLinkedList();
+            int lenght = getLenght();
 
             if (lenght < index)
             {
