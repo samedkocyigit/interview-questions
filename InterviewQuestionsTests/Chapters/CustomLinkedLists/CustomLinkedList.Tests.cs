@@ -35,6 +35,7 @@ namespace InterviewQuestionsTests.Chapters.CustomLinkedLists
             Assert.AreEqual(list.getKhtLastElement(1), 5);
             Assert.AreEqual(list.getKhtLastElement(3), 3);
             Assert.AreEqual(list.getKhtLastElement(5), 1);
+            Assert.ThrowsException<IndexOutOfRangeException>(() => list.getKhtLastElement(7));
         }
     }
 }
