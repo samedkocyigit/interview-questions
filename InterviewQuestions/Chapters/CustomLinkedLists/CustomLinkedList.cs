@@ -72,8 +72,6 @@
             Node? iteratorFast = head;
             Node? iteratorSlow = head;
 
-
-
             if (index > this.getLenght())
             {
                 throw new IndexOutOfRangeException("Index out of range.");
