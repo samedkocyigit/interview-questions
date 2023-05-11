@@ -53,5 +53,35 @@ namespace InterviewQuestionsTests.Chapters.CustomLinkedLists
             Assert.AreEqual(list.getLastKthElementAlternative(5), 1);
             Assert.ThrowsException<IndexOutOfRangeException>(() => list.getLastKthElementAlternative(7));
         }
+        [TestMethod]
+        public void isListPolindromeTest() 
+        {
+            CustomLinkedList list = new CustomLinkedList();
+            list.add(1); 
+            list.add(2);
+            list.add(3);
+            list.add(2);
+            list.add(1);
+
+            bool flag = list.isListPolindrome();
+
+            Assert.AreEqual(flag, true);
+        }
+        [TestMethod]
+        public void isListPolindromeTest2()
+        {
+            CustomLinkedList list = new CustomLinkedList();
+            list.add(1);
+            list.add(2);
+            list.add(3);
+            list.add(3);
+            list.add(4);
+            list.add(2);
+            list.add(1);
+
+            bool flag = list.isListPolindrome();
+
+            Assert.AreEqual(flag, false);
+        }
     }
 }
