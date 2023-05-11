@@ -22,7 +22,36 @@ namespace InterviewQuestionsTests.Chapters.CustomLinkedLists
             Assert.AreEqual(list?.head?.next?.next?.next?.data, 13);
             Assert.AreEqual(list?.head?.next?.next?.next?.next, null);
         }
+        [TestMethod]
+        public void getKthLastElementTest()
+        {
+            CustomLinkedList list = new CustomLinkedList();
+            list.add(1);
+            list.add(2);
+            list.add(3);
+            list.add(4);
+            list.add(5);
 
+            Assert.AreEqual(list.getKhtLastElement(1), 5);
+            Assert.AreEqual(list.getKhtLastElement(3), 3);
+            Assert.AreEqual(list.getKhtLastElement(5), 1);
+            Assert.ThrowsException<IndexOutOfRangeException>(() => list.getKhtLastElement(7));
+        }
 
+        [TestMethod]
+        public void getLastKthLastElementAlternativeTest()
+        {
+            CustomLinkedList list = new CustomLinkedList();
+            list.add(1);
+            list.add(2);
+            list.add(3);
+            list.add(4);
+            list.add(5);
+
+            Assert.AreEqual(list.getLastKthElementAlternative(1), 5);
+            Assert.AreEqual(list.getLastKthElementAlternative(3), 3);
+            Assert.AreEqual(list.getLastKthElementAlternative(5), 1);
+            Assert.ThrowsException<IndexOutOfRangeException>(() => list.getLastKthElementAlternative(7));
+        }
     }
 }
