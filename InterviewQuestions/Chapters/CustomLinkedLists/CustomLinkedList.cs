@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using System.Security;
-
-namespace InterviewQuestions.Chapters.CustomLinkedLists
+﻿namespace InterviewQuestions.Chapters.CustomLinkedLists
 {
     public class CustomLinkedList
     {
@@ -40,7 +37,7 @@ namespace InterviewQuestions.Chapters.CustomLinkedLists
         }
         public int getLenght()
         {
-            Node? currentNode= head;
+            Node? currentNode = head;
             int lenght = 0;
             while (currentNode != null)
             {
@@ -68,6 +65,33 @@ namespace InterviewQuestions.Chapters.CustomLinkedLists
             else
                 throw new Exception("Error: current node is null.");
 
+        }
+
+        public int getLastKthElementAlternative(int index)
+        {
+            Node? iteratorFast = head;
+            Node? iteratorSlow = head;
+
+
+
+            if (index > this.getLenght())
+            {
+                throw new IndexOutOfRangeException("Index out of range.");
+            }
+
+            for (int i = 0; i < index; i++)
+            {
+                if (iteratorFast == null) return -999999;
+                iteratorFast = iteratorFast.next;
+
+            }
+
+            while (iteratorFast != null)
+            {
+                iteratorFast = iteratorFast.next;
+                iteratorSlow = iteratorSlow.next;
+            }
+            return iteratorSlow.data;
         }
     }
 }
