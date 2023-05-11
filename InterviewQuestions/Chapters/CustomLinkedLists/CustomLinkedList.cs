@@ -87,9 +87,28 @@
             while (iteratorFast != null)
             {
                 iteratorFast = iteratorFast.next;
-                iteratorSlow = iteratorSlow.next;
+                iteratorSlow = iteratorSlow?.next;
             }
-            return iteratorSlow.data;
+            if (iteratorSlow != null)
+            {
+                return iteratorSlow.data;
+            }
+            else
+                throw new Exception("Error: current node is null.");
+        }
+        public bool isListPolindrome()
+        {   
+            Node? currentNode=head;
+            bool flag = true;
+            int index = this.getLenght()/2;
+            
+            for(int i = 1; i <= index; i++)
+            {
+                if(currentNode?.data != this.getKhtLastElement(i))
+                    flag=false;
+                currentNode= currentNode?.next;
+            }
+            return flag;
         }
     }
 }
