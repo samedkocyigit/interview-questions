@@ -83,5 +83,19 @@ namespace InterviewQuestionsTests.Chapters.CustomLinkedLists
 
             Assert.AreEqual(flag, false);
         }
+        
+        public void BinarySearchTreeTest()
+        {
+            BinarySearchTree BTS = new BinarySearchTree();
+            BTS.Insert(23);
+            BTS.Insert(18);
+            BTS.Insert(19);
+            BTS.Insert(54);
+            BTS.Insert(23);
+
+            int depth = BTS.GetTreeDepth();
+
+            Assert.AreEqual(depth, 3);
+        }
     }
 }
