@@ -111,4 +111,52 @@
             return flag;
         }
     }
+    public class BinarySearchTree
+    {
+        public class Node
+        {
+            public int data;
+            public Node? LeftNode;
+            public Node? RightNode;
+        }
+        public Node? root;
+        public bool Insert(int input)
+        {
+            Node before = null,after = this.root;
+            
+            while(after != null)
+            {
+                before = after;
+                if (input < after.data)
+                    after = after.LeftNode;
+                else if (input > after.data)
+                    after = after.RightNode;
+                else
+                {
+                    return false;
+                }
+            }
+            Node newNode = new Node();
+            newNode.data = input;
+
+            if(this.root == null)
+                this.root = newNode;
+            else
+            {
+                if(input < before.data) 
+                    before.LeftNode=newNode;
+                else
+                    before.RightNode= newNode;
+            }
+            return true;
+        } 
+        public int GetTreeDepth()
+        {
+            return this.GetTreeDepth(this.root);
+        }
+        public int GetTreeDepth(Node node)
+        {
+            return node == null ? 0 : Math.Max(GetTreeDepth(node.LeftNode), GetTreeDepth(node.RightNode)) + 1;
+        }
+    }
 }
