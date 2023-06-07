@@ -118,28 +118,35 @@
             public int data;
             public Node? LeftNode;
             public Node? RightNode;
-        }
-        public Node? root;
-        public bool Insert(int input)
-        {
-            
-            while(after != null)
+            public Node(int d)
             {
-                before = after;
-                if (input < after.data)
-                    after = after.LeftNode;
-                else if (input > after.data)
-                    after = after.RightNode;
-                else
-                    return false;
-                }
-            Node newNode = new Node();
-            newNode.data = input;
+                data = d;
+                LeftNode = RightNode = null;
+            }
+        }
 
-        } 
+        public  Node? root;
+
+        public virtual Node sortedArrayToBST(int[] arr,
+                                     int start, int end)
+        {
+            if (start > end)
+            {
+                return null;
+            }
+
+            int mid = (start + end) / 2;
+            Node node = new Node(arr[mid]);
+
+            node.LeftNode = sortedArrayToBST(arr, start, mid - 1);
+
+            node.RightNode = sortedArrayToBST(arr, mid + 1, end);
+
+            return node;
+        }
         public int GetTreeDepth()
         {
-            return this.GetTreeDepth(this.root);
+           return this.GetTreeDepth(this.root);
         }
         public int GetTreeDepth(Node node)
         {
