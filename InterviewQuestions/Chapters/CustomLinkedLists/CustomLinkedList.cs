@@ -122,7 +122,6 @@
         public Node? root;
         public bool Insert(int input)
         {
-            Node before = null,after = this.root;
             
             while(after != null)
             {
@@ -132,23 +131,11 @@
                 else if (input > after.data)
                     after = after.RightNode;
                 else
-                {
                     return false;
                 }
-            }
             Node newNode = new Node();
             newNode.data = input;
 
-            if(this.root == null)
-                this.root = newNode;
-            else
-            {
-                if(input < before.data) 
-                    before.LeftNode=newNode;
-                else
-                    before.RightNode= newNode;
-            }
-            return true;
         } 
         public int GetTreeDepth()
         {

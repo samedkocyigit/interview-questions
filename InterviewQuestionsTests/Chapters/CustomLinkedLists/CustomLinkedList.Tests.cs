@@ -1,4 +1,6 @@
 ﻿using InterviewQuestions.Chapters.CustomLinkedLists;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
+using System.ComponentModel.Design.Serialization;
 
 namespace InterviewQuestionsTests.Chapters.CustomLinkedLists
 {
@@ -83,19 +85,29 @@ namespace InterviewQuestionsTests.Chapters.CustomLinkedLists
 
             Assert.AreEqual(flag, false);
         }
-        
+        [TestMethod]
         public void BinarySearchTreeTest()
         {
-            BinarySearchTree BTS = new BinarySearchTree();
-            BTS.Insert(23);
-            BTS.Insert(18);
-            BTS.Insert(19);
-            BTS.Insert(54);
-            BTS.Insert(23);
 
-            int depth = BTS.GetTreeDepth();
+            BinarySearchTree bts = new BinarySearchTree();
+            int[] arr1 = new int[]{ 14, 17, 20, 28, 32, 42, 52,};
+            int n=arr1.Length;
+            BinarySearchTree.Node root = bts.sortedArrayToBST(arr1, 0, n - 1);
+            int depth =bts.GetTreeDepth(root);
 
             Assert.AreEqual(depth, 3);
+        }
+        [TestMethod]
+        public void BinarySearchTreeTest2()
+        {
+
+            BinarySearchTree bts = new BinarySearchTree();
+            int[] arr1 = new int[] { 1, 3, 5, 7, 10, 16, 19, 25 };
+            int n = arr1.Length;
+            BinarySearchTree.Node root = bts.sortedArrayToBST(arr1, 0, n - 1);
+            int depth = bts.GetTreeDepth(root);
+
+            Assert.AreEqual(depth, 4);
         }
     }
 }
