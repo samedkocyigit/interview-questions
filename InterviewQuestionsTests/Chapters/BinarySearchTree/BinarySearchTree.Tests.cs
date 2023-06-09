@@ -1,15 +1,25 @@
 ﻿using InterviewQuestions.Chapters.BinarySearchTree;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InterviewQuestionsTests.Chapters.BinarySearchTree
 {
     [TestClass]
     public class BinarySearchTreeTests
     {
+
+        private static int findMinDepth(int length)
+        {
+            int depth = 0;
+            for (int i = 0; i < length; i++)
+            {
+                if (Math.Pow(2, i) - 1 >= length)
+                {
+                    depth = i - 1;
+                    break;
+                };
+            }
+            return depth;
+        }
+
         [TestMethod]
         public void BinarySearchTreeTest()
         {
@@ -19,8 +29,9 @@ namespace InterviewQuestionsTests.Chapters.BinarySearchTree
             int n = arr1.Length;
             BinarySearchTreeSolutions.Node root = bts.sortedArrayToBST(arr1, 0, n - 1);
             int depth = bts.GetTreeDepth(root);
+            int minDepth = findMinDepth(n);
 
-            Assert.AreEqual(depth, 3);
+            Assert.AreEqual(depth, minDepth);
         }
         [TestMethod]
         public void BinarySearchTreeTest2()
@@ -31,8 +42,9 @@ namespace InterviewQuestionsTests.Chapters.BinarySearchTree
             int n = arr1.Length;
             BinarySearchTreeSolutions.Node root = bts.sortedArrayToBST(arr1, 0, n - 1);
             int depth = bts.GetTreeDepth(root);
+            int minDepth = findMinDepth(n);
 
-            Assert.AreEqual(depth, 4);
+            Assert.AreEqual(depth, minDepth);
         }
     }
 }
