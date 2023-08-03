@@ -1,3 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static BlackJack.Suit;
 using static BlackJack.Face;
 
 namespace BlackJack
@@ -28,10 +34,9 @@ namespace BlackJack
     }
 
     public class Card
-    {
-        public Face face {get;}
-        public Suit suit {get;}
-        public int Value{get;set;}
+    {   public int Value{get;set;}
+        public Suit Suit { get; }
+        public Face Face { get; }
 
         public Card(Suit suit,Face face)
         {
@@ -48,6 +53,7 @@ namespace BlackJack
                     break;
                 case Ace:
                     Value=11;
+                    break;
                 default:
                     Value= (int)Face+1;
                     break;    
