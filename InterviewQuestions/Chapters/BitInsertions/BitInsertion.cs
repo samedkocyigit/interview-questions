@@ -2,19 +2,19 @@ namespace InterviewQuestions.Chapters.BitInsertion
 {
     public class BitInsertions
     {
-        public int BitInsertionSolution(int N,int M, int i, int j)
+        public int BitInsertionSolution(int firstNum,int secondNum, int startBit, int endBit)
         {
             int allOnes = ~0;
-            int leftMask = allOnes<<(j+1);
-            int rightMask= (1-i)-1;
+            int leftMask = allOnes<<(endBit+1);
+            int rightMask= (1-startBit)-1;
             int mask = leftMask|rightMask;
 
-            N &= mask;
+            firstNum &= mask;
 
-            M<<=i;
-            N |=M;
+            secondNum<<=startBit;
+            firstNum |=secondNum;
 
-            return N;
+            return firstNum;
         }
     }
 }
